@@ -16,9 +16,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
+        stage.getIcons().add(new Image("\\images\\stageIcon.png"));
         primaryStage.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        primaryStage.setTitle("Log in");
+        primaryStage.setTitle("Clash Royale");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }
@@ -32,6 +33,18 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+
+    public static void changeScene(String fxml, User user){
+        try {
+            stage.setUserData(user);
+            Parent root = FXMLLoader.load(Main.class.getResource(fxml));
+            stage.setScene(new Scene(root));
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
 
 
 
