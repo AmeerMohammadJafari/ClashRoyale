@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     private static Stage stage;
+    private static MediaPlayer sound;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -45,8 +47,13 @@ public class Main extends Application {
         }
     }
 
+    public static MediaPlayer getSound() {
+        return sound;
+    }
 
-
+    public static void setSound(MediaPlayer sound) {
+        Main.sound = sound;
+    }
 
     public static void main(String[] args) {
         launch(args);

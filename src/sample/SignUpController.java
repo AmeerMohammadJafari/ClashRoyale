@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -68,6 +70,9 @@ public class SignUpController {
 
     @FXML
     void handle(ActionEvent event) {
+        Media media = new Media(getClass().getResource("/sounds/click.wav").toExternalForm());
+        MediaPlayer click = new MediaPlayer(media);
+        click.play();
         if (event.getSource() == backButton) {
             Main.changeScene("Login.fxml");
         } else if (event.getSource() == signUpButton) {

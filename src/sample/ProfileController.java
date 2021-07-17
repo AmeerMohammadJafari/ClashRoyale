@@ -17,6 +17,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -123,6 +125,9 @@ public class ProfileController {
 
     @FXML
     void handle() {
+        Media media = new Media(getClass().getResource("/sounds/click.wav").toExternalForm());
+        MediaPlayer click = new MediaPlayer(media);
+        click.play();
         Main.changeScene("MainMenu.fxml");
     }
 

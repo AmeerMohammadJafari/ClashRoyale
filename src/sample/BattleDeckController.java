@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -237,6 +239,9 @@ public class BattleDeckController {
 
     @FXML
     void handle(ActionEvent event) {
+        Media media = new Media(getClass().getResource("/sounds/click.wav").toExternalForm());
+        MediaPlayer click = new MediaPlayer(media);
+        click.play();
         Button src = (Button) event.getSource();
         if (src == backButton) {
             // TODO update the user

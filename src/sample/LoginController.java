@@ -7,11 +7,16 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.media.AudioClip;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
-import javax.print.attribute.standard.Media;
 import java.io.*;
 
 public class LoginController {
+
+    private MediaPlayer click;
 
     private User loginUser;
     @FXML
@@ -70,6 +75,9 @@ public class LoginController {
 
     @FXML
     void handle(ActionEvent event) {
+        Media media = new Media(getClass().getResource("/sounds/click.wav").toExternalForm());
+        click = new MediaPlayer(media);
+        click.play();
         if(event.getSource() == loginButton) {
             if (checkFields()) {
                 Main.changeScene("MainMenu.fxml", loginUser);
@@ -86,5 +94,10 @@ public class LoginController {
         String password = passwordTextField.getText();
         loginButton.setDisable(username.isEmpty() || username.trim().isEmpty() || password.isEmpty());
     }
+
+
+
+
+
 
 }

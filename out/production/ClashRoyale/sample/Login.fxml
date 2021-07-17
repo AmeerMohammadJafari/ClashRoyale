@@ -39,8 +39,8 @@
                   <Font name="System Bold Italic" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="usernameTextField" layoutX="89.0" layoutY="174.0" prefHeight="25.0" prefWidth="101.0" promptText="Username" />
-            <PasswordField fx:id="passwordTextField" layoutX="89.0" layoutY="218.0" prefHeight="25.0" prefWidth="102.0" promptText="Password" />
+            <TextField fx:id="usernameTextField" layoutX="89.0" layoutY="174.0" onKeyReleased="#keyFields" prefHeight="25.0" prefWidth="101.0" promptText="Username" />
+            <PasswordField fx:id="passwordTextField" layoutX="89.0" layoutY="218.0" onKeyReleased="#keyFields" prefHeight="25.0" prefWidth="102.0" promptText="Password" />
             <Button fx:id="loginButton" layoutX="107.0" layoutY="271.0" mnemonicParsing="false" onAction="#handle" prefHeight="30.0" prefWidth="65.0" text="LOGIN">
                <font>
                   <Font name="System Bold" size="13.0" />

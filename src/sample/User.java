@@ -4,6 +4,7 @@ import javafx.scene.image.ImageView;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public class User implements Serializable {
 
@@ -16,6 +17,9 @@ public class User implements Serializable {
     private String currentLeague;
     private int level;
     private ArrayList<Deck> decks;
+    // a linked hashmap for user's battle history, a String for opponent's username
+    // you should always keep the last 3 matches
+    private LinkedHashMap<Boolean,String> battleHistory;
 
     public User(String username, String password){
         this.username = username;
@@ -24,6 +28,7 @@ public class User implements Serializable {
         currentLeague = "Beginner";
         level = 1;
         decks = new ArrayList<>();
+        battleHistory = new LinkedHashMap<>();
     }
 
     public String getUsername() {
@@ -48,6 +53,10 @@ public class User implements Serializable {
 
     public String getCurrentLeague() {
         return currentLeague;
+    }
+
+    public LinkedHashMap<Boolean, String> getBattleHistory() {
+        return battleHistory;
     }
 
     private static ArrayList<User> getUsers(){
