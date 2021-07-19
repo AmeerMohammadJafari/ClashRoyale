@@ -7,13 +7,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-
 import java.io.*;
 
+/**
+ * This class controls login scene
+ */
 public class LoginController {
 
     private MediaPlayer click;
@@ -34,12 +34,14 @@ public class LoginController {
     @FXML
     private Label errorLabel;
 
+    /**
+     * just make the login button disable at first
+     */
     @FXML
     public void initialize(){
-
-
         loginButton.setDisable(true);
     }
+
 
 
 
@@ -72,7 +74,10 @@ public class LoginController {
     }
 
 
-
+    /**
+     * This method is for handling button clicking
+     * @param event action event
+     */
     @FXML
     void handle(ActionEvent event) {
         Media media = new Media(getClass().getResource("/sounds/click.wav").toExternalForm());
@@ -88,6 +93,10 @@ public class LoginController {
         }
     }
 
+    /**
+     * This method make loging button enable whenever the password and username fields are not empty
+     * @param event key event
+     */
     @FXML
     void keyFields(KeyEvent event) {
         String username = usernameTextField.getText();

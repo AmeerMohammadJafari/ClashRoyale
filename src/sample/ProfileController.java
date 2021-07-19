@@ -1,17 +1,11 @@
 package sample;
 
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
-import javafx.event.EventDispatcher;
-import javafx.event.EventType;
+
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+
 import javafx.scene.Cursor;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -19,12 +13,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.Stage;
-
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
+/**
+ * This class controls the profile scene
+ */
 public class ProfileController {
 
     private User user;
@@ -66,7 +59,9 @@ public class ProfileController {
     private ImageView card8;
 
 
-    // the data must first become updated in initialize method
+    /**
+     * initializing the nodes from user's info
+     */
     @FXML
     public void initialize() {
         Runnable runnable = () -> {
@@ -88,8 +83,7 @@ public class ProfileController {
 
     }
 
-
-    public void updateScene() {
+    private void updateScene() {
         user = (User) card1.getScene().getWindow().getUserData();
         // updating the labels
         numberOfCups.setText(String.valueOf(user.getNumberOfCups()));
@@ -123,6 +117,9 @@ public class ProfileController {
 
     }
 
+    /**
+     * handle back button
+     */
     @FXML
     void handle() {
         Media media = new Media(getClass().getResource("/sounds/click.wav").toExternalForm());
@@ -131,12 +128,21 @@ public class ProfileController {
         Main.changeScene("MainMenu.fxml");
     }
 
+
+    /**
+     * when mouse entered to a button's range, the cursor will be in hand form
+     * @param event mouse event
+     */
     @FXML
     void mouseEntered(MouseEvent event) {
         Node node = (Node) event.getSource();
         node.getScene().setCursor(Cursor.HAND);
     }
 
+    /**
+     * when mouse exited from a button's range, the cursor will be again in default form
+     * @param event mouse event
+     */
     @FXML
     void mouseExited(MouseEvent event) {
         Node node = (Node) event.getSource();

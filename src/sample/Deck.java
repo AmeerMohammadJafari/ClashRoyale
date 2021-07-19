@@ -2,10 +2,18 @@ package sample;
 
 import javafx.scene.image.Image;
 
+/**
+ * This enum is for all the characters and spells inside the game
+ */
 public enum Deck {
     Barbarian,Archer,BabyDragon,Wizard,MiniPekka,Giant,Valkyrie,Rage,Fireball,Arrows,Cannon,
     InfernoTower;
 
+    /**
+     * This method gives you the image of a deck
+     * @param deck deck
+     * @return the related image
+     */
     public static Image deckToImage(Deck deck){
         switch (deck) {
             case Barbarian -> {

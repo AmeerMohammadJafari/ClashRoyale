@@ -10,11 +10,19 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * This class starts the application and create a stage and set a scene to it
+ */
 public class Main extends Application {
 
     private static Stage stage;
     private static MediaPlayer sound;
 
+    /**
+     * set the initial scene (Login.fxml) to the stage
+     * @param primaryStage stage
+     * @throws Exception exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
@@ -26,6 +34,10 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    /**
+     * This method changes the scene of the stage
+     * @param fxml name of the fxml file
+     */
     public static void changeScene(String fxml) {
         try {
             Parent root = FXMLLoader.load(Main.class.getResource(fxml));
@@ -36,6 +48,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * This method changes the scene of the stage but also set an object (user) to the stage
+     * @param fxml name of the fxml file
+     * @param user user which will be set to the stage
+     */
     public static void changeScene(String fxml, User user){
         try {
             stage.setUserData(user);
@@ -47,10 +64,18 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * getter method for sound
+     * @return sound
+     */
     public static MediaPlayer getSound() {
         return sound;
     }
 
+    /**
+     * setter method for sound
+     * @param sound sound
+     */
     public static void setSound(MediaPlayer sound) {
         Main.sound = sound;
     }

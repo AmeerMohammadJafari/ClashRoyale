@@ -8,14 +8,14 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 
-import java.io.File;
 
-
+/**
+ * This class controls the Main menu scene
+ */
 public class MainMenuController {
 
     private MediaPlayer sound;
@@ -43,6 +43,9 @@ public class MainMenuController {
     @FXML
     private Label username;
 
+    /**
+     * just set the username to a label in the top right of the scene
+     */
     @FXML
     public void initialize() {
         if(Main.getSound() == null) {
@@ -72,6 +75,10 @@ public class MainMenuController {
         Platform.runLater(runnable);
     }
 
+    /**
+     * handle button clicking
+     * @param event action event
+     */
     @FXML
     void handle(ActionEvent event) {
         Media media = new Media(getClass().getResource("/sounds/click.wav").toExternalForm());
@@ -95,12 +102,20 @@ public class MainMenuController {
     }
 
 
+    /**
+     * when mouse entered to a button's range, the cursor will be in hand form
+     * @param event mouse event
+     */
     @FXML
     void mouseEntered(MouseEvent event) {
         Node node = (Node) event.getSource();
         node.getScene().setCursor(Cursor.HAND);
     }
 
+    /**
+     * when mouse exited from a button's range, the cursor will be again in default form
+     * @param event mouse event
+     */
     @FXML
     void mouseExited(MouseEvent event) {
         Node node = (Node) event.getSource();

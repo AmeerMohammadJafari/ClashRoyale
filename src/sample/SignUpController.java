@@ -9,10 +9,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-
 import java.io.*;
-import java.util.ArrayList;
 
+/**
+ * This class controls the sign up scene
+ */
 public class SignUpController {
 
     @FXML
@@ -30,6 +31,9 @@ public class SignUpController {
     @FXML
     private Label errorLabel;
 
+    /**
+     * just set the sign up button disable at first
+     */
     @FXML
     public void initialize() {
         signUpButton.setDisable(true);
@@ -37,37 +41,17 @@ public class SignUpController {
 
 
     private boolean checkFields() {
-        // check repetitive user
-        if (repetitiveUser()) {
+        if (User.repetitiveUsername(username.getText())) {
             errorLabel.setText("The username you entered is chosen by another user.Please try another one !");
             return false;
         }
-        return true;
+        else return true;
     }
 
-    private boolean repetitiveUser() {
-        User u = null;
-        try (FileInputStream fIn = new FileInputStream("Info.bin");
-             ObjectInputStream input = new ObjectInputStream(fIn)) {
-            while (true) {
-                u = (User) input.readObject();
-                if (u == null)
-                    return false;
-                if (username.getText().equals(u.getUsername())) {
-                    return true;
-                }
-            }
-        } catch (EOFException ignored) {
-
-        } catch (FileNotFoundException | NullPointerException ignored) {
-
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-
+    /**
+     * handling button clicing
+     * @param event action event
+     */
     @FXML
     void handle(ActionEvent event) {
         Media media = new Media(getClass().getResource("/sounds/click.wav").toExternalForm());
@@ -87,6 +71,10 @@ public class SignUpController {
     }
 
 
+    /**
+     * check the username and password fields, whenever both are not empty, the sign up button will be able
+     * @param event key event
+     */
     @FXML
     void checkFields(KeyEvent event) {
         signUpButton.setDisable(username.getText().isEmpty() || username.getText().trim().isEmpty() ||

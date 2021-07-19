@@ -15,6 +15,9 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
+/**
+ * This class controls Battle history scene
+ */
 public class BattleHistoryController {
 
     private ArrayList<Label> youList = new ArrayList<>();
@@ -50,6 +53,9 @@ public class BattleHistoryController {
     @FXML
     private Button backButton;
 
+    /**
+     * build the scenes and initializing the nodes with user's info
+     */
     @FXML
     public void initialize(){
         vsList.add(vs1);
@@ -70,15 +76,6 @@ public class BattleHistoryController {
         for(Label l : opponentList){
             l.setVisible(false);
         }
-//        vs1.setVisible(false);
-//        vs2.setVisible(false);
-//        vs3.setVisible(false);
-//        you1.setVisible(false);
-//        you2.setVisible(false);
-//        you3.setVisible(false);
-//        opponent1.setVisible(false);
-//        opponent2.setVisible(false);
-//        opponent3.setVisible(false);
         Runnable runnable = () -> {
             while(true){
                 if(vs1.getScene() != null){
@@ -123,6 +120,9 @@ public class BattleHistoryController {
         }
     }
 
+    /**
+     * handle buttons clicking
+     */
     @FXML
     void handle() {
         Media media = new Media(getClass().getResource("/sounds/click.wav").toExternalForm());
@@ -131,12 +131,20 @@ public class BattleHistoryController {
         Main.changeScene("MainMenu.fxml");
     }
 
+    /**
+     * when mouse entered to a button's range, the cursor will be in hand form
+     * @param event mouse event
+     */
     @FXML
     void mouseEntered(MouseEvent event) {
         Node node = (Node) event.getSource();
         node.getScene().setCursor(Cursor.HAND);
     }
 
+    /**
+     * when mouse exited from a button's range, the cursor will be again in default form
+     * @param event mouse event
+     */
     @FXML
     void mouseExited(MouseEvent event) {
         Node node = (Node) event.getSource();

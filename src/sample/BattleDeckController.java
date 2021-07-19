@@ -15,6 +15,9 @@ import javafx.scene.media.MediaPlayer;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+/**
+ * This class is a controller for the Battle Deck scene
+ */
 public class BattleDeckController {
 
     private ArrayList<Button> deckButtons;
@@ -111,6 +114,9 @@ public class BattleDeckController {
     private ImageView card8;
 
 
+    /**
+     * initialize the nodes of the scene with user's info
+     */
     @FXML
     public void initialize() {
 
@@ -237,6 +243,10 @@ public class BattleDeckController {
         return true;
     }
 
+    /**
+     * This method handles a button clicking
+     * @param event
+     */
     @FXML
     void handle(ActionEvent event) {
         Media media = new Media(getClass().getResource("/sounds/click.wav").toExternalForm());
@@ -315,12 +325,20 @@ public class BattleDeckController {
 
     }
 
+    /**
+     * when mouse entered to a button's range, the cursor will be in hand form
+     * @param event mouse event
+     */
     @FXML
     void mouseEntered(MouseEvent event) {
         Node node = (Node) event.getSource();
         node.getScene().setCursor(Cursor.HAND);
     }
 
+    /**
+     * when mouse exited from a button's range, the cursor will be again in default form
+     * @param event mouse event
+     */
     @FXML
     void mouseExited(MouseEvent event) {
         Node node = (Node) event.getSource();
