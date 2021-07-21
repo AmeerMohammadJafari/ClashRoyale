@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BattleDeckController">
+   <top>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/background.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="barbarianButton" layoutX="32.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseDragEntered="#mouseEntered" onMouseDragExited="#mouseExited" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="60.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/BarbariansCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="archerButton" layoutX="102.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseDragEntered="#mouseEntered" onMouseDragExited="#mouseExited" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="60.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/ArchersCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="wizardButton" layoutX="240.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseDragEntered="#mouseEntered" onMouseDragExited="#mouseExited" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="60.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/WizardCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="miniPekkaButton" layoutX="309.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseDragEntered="#mouseEntered" onMouseDragExited="#mouseExited" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="60.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/MiniPEKKACard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="giantButton" layoutX="379.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseDragEntered="#mouseEntered" onMouseDragExited="#mouseExited" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="60.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/GiantCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="valkyrieButton" layoutX="448.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseDragEntered="#mouseEntered" onMouseDragExited="#mouseExited" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="60.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/ValkyrieCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="rageButton" layoutX="518.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseDragEntered="#mouseEntered" onMouseDragExited="#mouseExited" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="60.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/RageCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="infernoButton" layoutX="379.0" layoutY="291.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseDragEntered="#mouseEntered" onMouseDragExited="#mouseExited" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="60.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/InfernoTowerCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="cannonButton" layoutX="309.0" layoutY="291.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseDragEntered="#mouseEntered" onMouseDragExited="#mouseExited" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="60.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/CannonCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="arrowsButton" layoutX="240.0" layoutY="291.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseDragEntered="#mouseEntered" onMouseDragExited="#mouseExited" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="60.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/ArrowsCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="fireballButton" layoutX="170.0" layoutY="291.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseDragEntered="#mouseEntered" onMouseDragExited="#mouseExited" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="60.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/FireballCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="babyDragonButton" layoutX="170.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseDragEntered="#mouseEntered" onMouseDragExited="#mouseExited" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fitHeight="75.0" fitWidth="60.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/BabyDragonCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="backButton" layoutX="478.0" layoutY="340.0" mnemonicParsing="false" onAction="#handle" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="46.0" prefWidth="111.0" text="Back">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="button1" layoutX="32.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fx:id="card1" fitHeight="75.0" fitWidth="60.0" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/EmptyCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="button2" layoutX="102.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fx:id="card2" fitHeight="75.0" fitWidth="60.0" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/EmptyCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="button7" layoutX="448.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fx:id="card7" fitHeight="75.0" fitWidth="60.0" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/EmptyCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="button5" layoutX="309.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fx:id="card5" fitHeight="75.0" fitWidth="60.0" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/EmptyCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="button6" layoutX="379.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fx:id="card6" fitHeight="75.0" fitWidth="60.0" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/EmptyCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="button4" layoutX="240.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fx:id="card4" fitHeight="75.0" fitWidth="60.0" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/EmptyCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="button3" layoutX="170.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fx:id="card3" fitHeight="75.0" fitWidth="60.0" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/EmptyCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="button8" layoutX="518.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handle" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="75.0" prefWidth="60.0">
+               <graphic>
+                  <ImageView fx:id="card8" fitHeight="75.0" fitWidth="60.0" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/EmptyCard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
