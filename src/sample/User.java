@@ -1,7 +1,9 @@
 package sample;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+
 /**
  * This class is for User and all the information that a single user contains
  */
@@ -18,25 +20,27 @@ public class User implements Serializable {
     private ArrayList<Deck> decks;
     // a linked hashmap for user's battle history, a String for opponent's username
     // you should always keep the last 3 matches
-    private LinkedHashMap<Boolean,String> battleHistory;
+    private ArrayList<MatchResult> battleHistory;
 
     /**
      * constructor
+     *
      * @param username username
      * @param password password
      */
-    public User(String username, String password){
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
         numberOfCups = 0;
         currentLeague = "Beginner";
         level = 1;
         decks = new ArrayList<>();
-        battleHistory = new LinkedHashMap<>();
+        battleHistory = new ArrayList<>();
     }
 
     /**
      * getter method for username
+     *
      * @return username
      */
     public String getUsername() {
@@ -45,6 +49,7 @@ public class User implements Serializable {
 
     /**
      * getter method for password
+     *
      * @return password
      */
     public String getPassword() {
@@ -53,6 +58,7 @@ public class User implements Serializable {
 
     /**
      * getter method for number of cups
+     *
      * @return number of cups
      */
     public int getNumberOfCups() {
@@ -61,6 +67,7 @@ public class User implements Serializable {
 
     /**
      * getter method for Decks list
+     *
      * @return decks list
      */
     public ArrayList<Deck> getDecks() {
@@ -69,6 +76,7 @@ public class User implements Serializable {
 
     /**
      * getter method for level
+     *
      * @return level of the user
      */
     public int getLevel() {
@@ -77,6 +85,7 @@ public class User implements Serializable {
 
     /**
      * getter method for current league
+     *
      * @return current league
      */
     public String getCurrentLeague() {
@@ -85,17 +94,33 @@ public class User implements Serializable {
 
     /**
      * getter method for battle history
+     *
      * @return battle history
      */
-    public LinkedHashMap<Boolean, String> getBattleHistory() {
+    public ArrayList<MatchResult> getBattleHistory() {
         return battleHistory;
+    }
+
+    public void updateCups(boolean win) {
+        if (win) {
+            numberOfCups += 500;
+            level += 1;
+        }
+        else numberOfCups += 100;
+        if (numberOfCups <= 500)
+            currentLeague = "Beginner";
+        else if (numberOfCups <= 1000)
+            currentLeague = "Intermediate";
+        else
+            currentLeague = "Professional";
     }
 
     /**
      * get the saved users in the File (info.bin)
+     *
      * @return users list
      */
-    private static ArrayList<User> getUsers(){
+    private static ArrayList<User> getUsers() {
         User u = null;
         ArrayList<User> users = new ArrayList<>();
         try (FileInputStream fIn = new FileInputStream("Info.bin");
@@ -118,9 +143,10 @@ public class User implements Serializable {
 
     /**
      * save a list of users in the file (info.bin), it does not append but overwrites
+     *
      * @param users
      */
-    private static void saveUsersList(ArrayList<User> users){
+    private static void saveUsersList(ArrayList<User> users) {
         try (FileOutputStream fOut = new FileOutputStream("Info.bin");
              ObjectOutputStream output = new ObjectOutputStream(fOut)) {
 
@@ -136,9 +162,10 @@ public class User implements Serializable {
 
     /**
      * save a user at the end of the file (info.bin)
+     *
      * @param user user which will be saved
      */
-    public static void saveUser(User user){
+    public static void saveUser(User user) {
         ArrayList<User> users = getUsers();
         users.add(user);
         saveUsersList(users);
@@ -146,14 +173,15 @@ public class User implements Serializable {
 
     /**
      * change a user's info which has been saved in the file before
+     *
      * @param user user
      */
-    public static void rewriteUser(User user){
+    public static void rewriteUser(User user) {
         ArrayList<User> users = getUsers();
-        int i = 0 ;
-        for(User u : users){
-            if(u.getUsername().equals(user.getUsername())){
-                users.set(i,user);
+        int i = 0;
+        for (User u : users) {
+            if (u.getUsername().equals(user.getUsername())) {
+                users.set(i, user);
             }
             i++;
         }
@@ -162,10 +190,11 @@ public class User implements Serializable {
 
     /**
      * checks if the entered username exists in the (info.bin) or not
+     *
      * @param username username
      * @return true if is repetitive, false if not
      */
-    public static boolean repetitiveUsername(String username){
+    public static boolean repetitiveUsername(String username) {
         User u = null;
         try (FileInputStream fIn = new FileInputStream("Info.bin");
              ObjectInputStream input = new ObjectInputStream(fIn)) {

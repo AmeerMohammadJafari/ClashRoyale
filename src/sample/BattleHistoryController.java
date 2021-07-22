@@ -13,7 +13,9 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * This class controls Battle history scene
@@ -96,17 +98,21 @@ public class BattleHistoryController {
 
     private void update(){
         User user = (User) vs1.getScene().getWindow().getUserData();
-        LinkedHashMap<Boolean, String> history = user.getBattleHistory();
-        int i = 0 ;
         try {
-            for (Boolean b : history.keySet()) {
+            ArrayList<MatchResult> history = user.getBattleHistory();
+            int i = 0;
+            System.out.println(history.size());
+            for (MatchResult res : history) {
+                boolean win = res.isWin();
+                String opponentName = res.getOpponentName();
                 Label you = youList.get(i);
                 Label vs = vsList.get(i);
                 Label opponent = opponentList.get(i);
                 you.setVisible(true);
                 vs.setVisible(true);
                 opponent.setVisible(true);
-                if (b) {
+                opponent.setText(opponentName);
+                if (win) {
                     you.setTextFill(Color.GREEN);
                     opponent.setTextFill(Color.RED);
                 } else {
